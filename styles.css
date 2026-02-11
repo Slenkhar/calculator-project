@@ -80,7 +80,7 @@ button:hover {
   gap: 5px;
   align-items: center;
   text-decoration: none;
-  color: inherit;
+  color: #888;
   font-size: 1.2rem;
 }
 
