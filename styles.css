@@ -16,6 +16,38 @@ body {
   box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
 }
 
+.panel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.solar {
+  display: flex;
+  gap: 2px;
+}
+
+.cell {
+  background: linear-gradient(180deg, #1f241a, #0f120c);
+  width: 12px;
+  height: 40px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.brand a {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  text-decoration: none;
+  color: #888;
+  font-size: 1.2rem;
+}
+
+.brand a:hover {
+  color: #1abc9c;
+  transition: color 0.3s;
+}
+
 #display {
   background-color: #222;
   font-size: 2rem;
@@ -65,26 +97,4 @@ button:hover {
 
 .clear, .backspace, .decimal {
   background-color: #e74c3c;
-}
-
-.brand {
-  grid-column: span 2;
-}
-
-.brand img {
-  width: 25px;
-}
-
-.brand a {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  text-decoration: none;
-  color: #888;
-  font-size: 1.2rem;
-}
-
-.brand a:hover {
-  color: #1abc9c;
-  transition: color 0.3s;
 }
