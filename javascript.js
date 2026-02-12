@@ -156,3 +156,19 @@ decimalButton.addEventListener("click", () => {
     }
   }
 });
+
+//----------------
+//Keyboard support
+//----------------
+document.addEventListener("keydown", (event) => {
+  if (!isNaN(event.key)) {
+    document.querySelector(`.number[data-number="${event.key}"]`).click();
+  }
+  if (["+", "-", "*", "/"].includes(event.key)) {
+    document.querySelector(`.operator[data-operator="${event.key}"]`).click();
+  }
+  if (event.key === "Enter" || event.key === "=") equalsButton.click();
+  if (event.key === "Backspace") backspaceButton.click();
+  if (event.key === ".") decimalButton.click();
+  if (event.key.toLowerCase() === "c") clearButton.click();
+});
