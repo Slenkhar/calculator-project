@@ -94,3 +94,15 @@ operatorButtons.forEach((button) => {
     resultDisplayed = false;
   });
 });
+
+//-------------
+//Equals logic
+//-------------
+equalsButton.addEventListener("click", () => {
+  if (!firstNumber || !operator || !secondNumber) return;
+  firstNumber = operate(operator, firstNumber, secondNumber).toString();
+  updateDisplay(firstNumber);
+  secondNumber = "";
+  operator = "";
+  resultDisplayed = true;
+});
