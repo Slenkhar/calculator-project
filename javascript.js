@@ -106,3 +106,14 @@ equalsButton.addEventListener("click", () => {
   operator = "";
   resultDisplayed = true;
 });
+
+//-------------
+//Clear button
+//-------------
+clearButton.addEventListener("click", () => {
+  firstNumber = "";
+  secondNumber = "";
+  operator = "";
+  resultDisplayed = false;
+  updateDisplay("0");
+});
