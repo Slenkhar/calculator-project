@@ -117,3 +117,17 @@ clearButton.addEventListener("click", () => {
   resultDisplayed = false;
   updateDisplay("0");
 });
+
+//----------------
+//Backspace button
+//----------------
+backspaceButton.addEventListener("click", () => {
+  if (resultDisplayed) return;
+  if (!operator) {
+    firstNumber = firstNumber.slice(0, -1);
+    updateDisplay(firstNumber || 0);
+  } else {
+    secondNumber = secondNumber.slice(0, -1);
+    updateDisplay(secondNumber || 0);
+  }
+});
