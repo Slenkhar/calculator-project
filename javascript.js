@@ -51,7 +51,7 @@ function operate(op, a, b) {
       result = divide(a, b);
       break;
   }
-  return Math.round((result * 100000) / 100000);
+  return Math.round(result * 100000) / 100000;
 }
 
 //-----------------
@@ -129,5 +129,30 @@ backspaceButton.addEventListener("click", () => {
   } else {
     secondNumber = secondNumber.slice(0, -1);
     updateDisplay(secondNumber || 0);
+  }
+});
+
+//----------------
+//Decimal button
+//----------------
+decimalButton.addEventListener("click", () => {
+  if (resultDisplayed) {
+    firstNumber = "0.";
+    resultDisplayed = false;
+    updateDisplay(firstNumber);
+    return;
+  }
+  if (!operator) {
+    if (!firstNumber.includes(".")) {
+      firstNumber = firstNumber || "0";
+      firstNumber += ".";
+      updateDisplay(firstNumber);
+    }
+  } else {
+    if (!secondNumber.includes(".")) {
+      secondNumber = secondNumber || "0";
+      secondNumber += ".";
+      updateDisplay(secondNumber);
+    }
   }
 });
