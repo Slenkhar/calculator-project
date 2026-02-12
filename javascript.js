@@ -48,7 +48,11 @@ function operate(op, a, b) {
       result = multiply(a, b);
       break;
     case "/":
-      result = divide(a, b);
+      if (b === 0) {
+        return (display.textContent = "Error: #DIV/0!");
+      } else {
+        result = divide(a, b);
+      }
       break;
   }
   return Math.round(result * 100000) / 100000;
