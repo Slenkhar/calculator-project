@@ -1,5 +1,13 @@
-let num1 = "";
-let num2 = "";
+const display = document.querySelector("display");
+const operatorButtons = document.querySelector(".operator");
+const numberButtons = document.querySelector(".number");
+const clearButton = document.querySelector("clear");
+const backspaceButton = document.querySelector("backspace");
+const decimalButton = document.querySelector("decimal");
+const equalsButton = document.querySelector("equals");
+
+let firstNumber = "";
+let secondNumber = "";
 let operator = "";
 
 //---------------
@@ -43,4 +51,11 @@ function operate(op, a, b) {
       break;
   }
   return Math.round((result * 100000) / 100000);
+}
+
+//-----------------
+//Display function
+//-----------------
+function updateDisplay(value) {
+  display.textContent = value;
 }

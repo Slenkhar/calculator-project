@@ -19,18 +19,6 @@ body {
 .panel {
   display: flex;
   justify-content: space-between;
-}
-
-.solar {
-  display: flex;
-  gap: 2px;
-}
-
-.cell {
-  background: linear-gradient(180deg, #1f241a, #0f120c);
-  width: 12px;
-  height: 40px;
-  border-radius: 2px;
   margin-bottom: 10px;
 }
 
@@ -46,6 +34,18 @@ body {
 .brand a:hover {
   color: #1abc9c;
   transition: color 0.3s;
+}
+
+.solar {
+  display: flex;
+  gap: 2px;
+}
+
+.cell {
+  background: linear-gradient(180deg, #1f241a, #0f120c);
+  width: 12px;
+  height: 40px;
+  border-radius: 2px;
 }
 
 #display {
