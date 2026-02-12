@@ -79,3 +79,18 @@ numberButtons.forEach((button) => {
     }
   });
 });
+
+//---------------
+//Operator input
+//---------------
+operatorButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (firstNumber && secondNumber) {
+      firstNumber = operate(operator, firstNumber, secondNumber).toString();
+      updateDisplay(firstNumber);
+      secondNumber = "";
+    }
+    operator = button.dataset.operator;
+    resultDisplayed = false;
+  });
+});
