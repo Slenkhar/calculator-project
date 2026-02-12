@@ -1,14 +1,15 @@
-const display = document.querySelector("display");
-const operatorButtons = document.querySelector(".operator");
-const numberButtons = document.querySelector(".number");
-const clearButton = document.querySelector("clear");
-const backspaceButton = document.querySelector("backspace");
-const decimalButton = document.querySelector("decimal");
-const equalsButton = document.querySelector("equals");
-
 let firstNumber = "";
 let secondNumber = "";
 let operator = "";
+let resultDisplayed = false;
+
+const display = document.getElementById("display");
+const operatorButtons = document.querySelectorAll(".operator");
+const numberButtons = document.querySelectorAll(".number");
+const clearButton = document.getElementById("clear");
+const backspaceButton = document.getElementById("backspace");
+const decimalButton = document.getElementById("decimal");
+const equalsButton = document.getElementById("equals");
 
 //---------------
 //Math functions
@@ -59,3 +60,22 @@ function operate(op, a, b) {
 function updateDisplay(value) {
   display.textContent = value;
 }
+
+//-------------
+//Number input
+//-------------
+numberButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (resultDisplayed) {
+      firstNumber = "";
+      resultDisplayed = false;
+    }
+    if (!operator) {
+      firstNumber += button.dataset.number;
+      updateDisplay(firstNumber);
+    } else {
+      secondNumber += button.dataset.number;
+      updateDisplay(secondNumber);
+    }
+  });
+});
